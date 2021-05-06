@@ -28,6 +28,8 @@ class User
 
 		void RemoveCredits(int lessCredit);
 
+		virtual LibraryItem* GetSpecificGame(std::string gameName);
+
 	private:
 		std::string username;
 		std::string password;

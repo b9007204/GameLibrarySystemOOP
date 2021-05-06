@@ -16,7 +16,7 @@ Player::~Player()
 
 bool Player::HasGame(const std::string game)
 {
-	for (int i = 0; library.length(); i++)
+	for (int i = 0; i < library.length(); i++)
 	{
 		if (library.getPosition(i)->getGame()->GetName() == game)
 		{
@@ -30,4 +30,15 @@ bool Player::HasGame(const std::string game)
 List<LibraryItem*>* Player::GetMyGames()
 {
 	return &library;
+}
+
+LibraryItem* Player::GetSpecificGame(std::string gameName)
+{
+	for (int i = 0; i < library.length(); i++)
+	{
+		if (library.getPosition(i)->getGame()->GetName() == gameName)
+		{
+			return library.getPosition(i);
+		}
+	}
 }

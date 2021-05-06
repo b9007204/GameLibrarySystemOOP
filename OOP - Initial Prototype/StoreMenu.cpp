@@ -45,7 +45,7 @@ bool StoreMenu::HandleChoice(char choice)
 	if (index >= 0 && index < games.length())
 	{
 		//	     std::string& title,             Application* app,     Game* game
-		GameMenu(games.getPosition(index)->GetName(), app, games.getPosition(index));		
+		GameMenu(Utils::toUpper(games.getPosition(index)->GetName()), app, games.getPosition(index));		
 
 		//BlockingMessage("Not implemented, press return to continue THIS ONE ");
 		// go to game detail page

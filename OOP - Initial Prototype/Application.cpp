@@ -107,3 +107,8 @@ void Application::setAccount(Account* newAccount)
 {
 	this->currentAccount = newAccount;
 }
+
+void Application::setUser(User* newUser)
+{
+	this->currentUser = newUser;
+}

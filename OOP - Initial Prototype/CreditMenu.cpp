@@ -16,6 +16,12 @@ void CreditMenu::OutputOptions()
     Option('5', "500");
     Option('6', "1000");
     Option('7', "2000");
+    Line("");
+    Line("(You have " + std::to_string(app->GetCurrentUser()->GetCredits()) + " credits)");
+    if (app->GetCurrentUser()->GetCredits() > 10000)
+    {
+        Line("Hey big spender!");
+    }
 }
 
 bool CreditMenu::HandleChoice(char creditChoice)
@@ -62,5 +68,5 @@ bool CreditMenu::HandleChoice(char creditChoice)
         }
     }
 
-    return true;
+    return false;
 }

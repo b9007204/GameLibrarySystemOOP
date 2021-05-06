@@ -68,3 +68,9 @@ void User::RemoveCredits(int lessCredit)
 {
 	credits -= lessCredit;
 }
+
+
+LibraryItem* User::GetSpecificGame(std::string gameName)
+{
+	return nullptr;
+}

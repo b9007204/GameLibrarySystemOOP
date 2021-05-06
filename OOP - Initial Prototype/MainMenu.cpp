@@ -59,9 +59,9 @@ bool MainMenu::HandleChoice(char choice)
 			// this would need to go to a LoginMenu - similar to StoreMenu
 			// instead we just set logged in to true on the main app object
 
-			//LoginMenu("Login", app);	commented, doesnt work
+			LoginMenu("Login", app);//	commented, doesnt work
 
-			app->LoginUser(app->GetCurrentAccount()->getUsers().getPosition(0)); //THIS WORKS but only logs in alice (first user)
+			//app->LoginUser(app->GetCurrentAccount()->getUsers().getPosition(0)); //THIS WORKS but only logs in alice (first user)
 		}
 	} break;
 	case 'P':
@@ -85,7 +85,7 @@ bool MainMenu::HandleChoice(char choice)
 		{
 			std::string userSearchChoice = Question("Enter a game to Find");
 
-			StoreMenu("Search", app, app->GetStore().SearchForGame(userSearchChoice));
+			StoreMenu("Search", app,  app->GetStore().SearchForGame(userSearchChoice));
 
 
 		}

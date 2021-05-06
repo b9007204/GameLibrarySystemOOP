@@ -8,6 +8,10 @@ Admin::Admin(const std::string& username, const std::string& password, const Dat
 
 Admin::~Admin()
 {
+	for (int i = 0; i < 2; ++i)
+	{
+		delete library.getPosition(i);
+	}
 }
 
 List<LibraryItem*>* Admin::GetMyGames()

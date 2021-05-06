@@ -24,6 +24,8 @@ class Application
 		
 		void setAccount(Account*);
 
+		void setUser(User* newUser);
+
 		Account* getAccount();
 
 

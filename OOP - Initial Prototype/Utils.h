@@ -11,7 +11,11 @@ class Utils
 
     static bool StartsWith(std::string fullText, std::string searchText);  //Search Function
 
-   // char toUpper(std::string inputText); //toUpper function INCOMPLETE
+    static std::string toUpper(std::string lowercaseString);
+
+    static int getRandomNumber(int lowRange, int highRange);
+
+    static std::string FormatPlaytime(int minutes);
 
     void addToCredits(int oldCredits, int newCredits);  //Add credits to account
     

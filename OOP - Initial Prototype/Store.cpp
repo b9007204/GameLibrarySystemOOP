@@ -30,10 +30,15 @@ List<Game*> Store::SearchForGame(std::string gameToSearch)	//search function	UNF
 	
 	List<Game*> foundGames;
 
+	std::string StringToSearch = Utils::toUpper(gameToSearch);
+
+	
 
 	for (int i = 0; i < getGames().length(); i++)
 	{
-		if (Utils::StartsWith(getGames().getPosition(i)->GetName(), gameToSearch) == true)
+		std::string gameName = Utils::toUpper(getGames().getPosition(i)->GetName());
+
+		if (Utils::StartsWith(gameName, StringToSearch) == true)
 		{
 
 			foundGames.addAtEnd(getGames().getPosition(i));

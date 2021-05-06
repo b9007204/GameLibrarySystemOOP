@@ -14,10 +14,40 @@ void GameMenu::OutputOptions()
         {
         Line("(You have " + std::to_string(app->GetCurrentUser()->GetCredits()) + " Credits)");
         Line("");
+        Line("");
+
+             if (app->GetCurrentUser()->HasGame(game->GetName()))
+             {
+                Option('P', "Play Game");
+                Line("");
+
+                std::string thisGamePlayTime = std::to_string(app->GetCurrentUser()->GetSpecificGame(game->GetName())->GetTotalPlaytime());
+
+                int Playtime = app->GetCurrentUser()->GetSpecificGame(game->GetName())->GetTotalPlaytime();
+
+                if (app->GetCurrentUser()->GetSpecificGame(game->GetName())->GetTotalPlaytime() > 0)
+                {
+                    if (app->GetCurrentUser()->GetSpecificGame(game->GetName())->GetTotalPlaytime() >= 60)
+                    {
+                        thisGamePlayTime = Utils::FormatPlaytime(Playtime);
+                        Line("(" + thisGamePlayTime + ")");
+                    }
+                    else
+                    {
+                        Line("(" + thisGamePlayTime + " Minutes Playtime)");
+                    }
+                }
+                
+                Line("");
+             }
+             else
+             {
+                 Option('P', "Buy Game");
+             }
         }
     
 
-        Option('P', "Buy Game");  
+          
 }
 
 bool GameMenu::HandleChoice(char choice)
@@ -28,21 +58,29 @@ bool GameMenu::HandleChoice(char choice)
 
     switch (choice)
     {
-        case 'P':   //purchase
+        case 'P':   //purchase or play
         {
+            if (app->GetCurrentUser()->HasGame(game->GetName()))
+            {
+                app->GetCurrentUser()->GetSpecificGame(game->GetName())->AddPlaytime();
+                return false;
+            }
+            else
+            {
             if (game->GetCost() < app->GetCurrentUser()->GetCredits())
             {
-            LibraryItem* thisGame = new LibraryItem(Date(17, 06, 2018), game);
+                LibraryItem* thisGame = new LibraryItem(Date(17, 06, 2018), game);
 
-            int costOfThisGame = thisGame->getGame()->GetCost();
+                int costOfThisGame = thisGame->getGame()->GetCost();
 
-            app->GetCurrentUser()->GetMyGames()->addAtEnd(thisGame);
-            app->GetCurrentUser()->RemoveCredits(costOfThisGame);
-            //remove credits
+                app->GetCurrentUser()->GetMyGames()->addAtEnd(thisGame);
+                app->GetCurrentUser()->RemoveCredits(costOfThisGame);
+                //remove credits
             }
             else
             {
                 BlockingMessage("You dont have enough credits to purchase this game.");
+            }
             }
             
             return true;

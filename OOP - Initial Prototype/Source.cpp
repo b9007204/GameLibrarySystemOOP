@@ -59,7 +59,7 @@ void createHardcodedTestData(Application* app)
 	Player* u3 = new Player("Charlie", "password", Date(24, 9, 2018),0);						//Adds new players but uses date class instead of hardcode
 	
 	
-	//STILL NEEDS CREDITS
+	
 	//CREATE USERS===================================================================================================================================
 
 

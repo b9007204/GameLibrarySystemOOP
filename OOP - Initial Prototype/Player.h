@@ -17,6 +17,8 @@ class Player : public User
 
 		List<LibraryItem*>* GetMyGames() override;
 
+		LibraryItem* GetSpecificGame(std::string gameName) override;
+
 		//LibraryItem* library[2] = { }; // TODO: replace with custom List<T> class
 		List<LibraryItem*> library;		//replaced from above							
 	private:
