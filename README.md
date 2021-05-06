@@ -2,6 +2,12 @@
 A better version of Steam
 
 
+========================================================================================================================
+---------------------------------CLEAN THE CODE OF USELESS COMMENTS BEFORE SUBMISSION!!---------------------------------
+========================================================================================================================
+
+
+
 SO FAR:
 
 Base Improvements (25%):-
@@ -19,7 +25,7 @@ Core Feature Implementation (35%):-
   Searching the Store -- Done, although the search is case sensitive. Currently fixing. 5/5/21
   
   
--------------------------------------------NOT DONE FROM HERE-------------------------------------------
+--------------------------------------------------NOT DONE FROM HERE--------------------------------------------------
 
 Experimental Features and Improvements (15%):-
   Aesthetics and Consistency -- NOT DONE.
@@ -33,7 +39,7 @@ Exploratory Functionality (15%)
   Reviews -- NOT DONE.
 
   
--------------------------------------------What Happens So Far-------------------------------------------
+--------------------------------------------------What Happens So Far--------------------------------------------------
 
 The System will let a user browse the store without being logged in, although buying games is impossible and a blocking 
 message will inform them of that.
